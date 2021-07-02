@@ -1,0 +1,32 @@
+{% load static %}
+<script>
+    function display() {
+        var container = document.getElementById('map');
+        var options = {
+	        center: new kakao.maps.LatLng(33.450701, 126.570667),
+	        level: 3
+        };
+
+        var map = new kakao.maps.Map(container, options);
+
+        var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667);
+
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        marker.setMap(map);
+    };
+    $(document).ready(function(){
+        display();
+    });
+</script>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Geo location</h1>
+    <button id="geo1">Geo1</button><button id="geo2">Geo2</button>
+    <div id="map" style="width:500px;height:400px;"></div>
+
+</div>
+<!-- /.container-fluid -->
